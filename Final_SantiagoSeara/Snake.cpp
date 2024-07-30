@@ -33,7 +33,7 @@ void SnakeMovement(Snake& snake)
 		if (i == 0) // Cabeza
 		{
 			prevPos = snake.tail[i]; // Guarda la posición actual de la cabeza
-			snake.tail[i] = { snake.head }; // Mueve la cabeza a la nueva posición (x, y)
+			snake.tail[i] = { snake.head }; // Mueve la cabeza a la nueva posición (head)
 		}
 		else
 		{

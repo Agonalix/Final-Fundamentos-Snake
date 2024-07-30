@@ -195,7 +195,7 @@ void CollisionDetector()
 		currentGameScene = gameScenes::gameOver;
 	}
 
-	if (snake.tail[0].y >= BORDER_WIDTH || snake.tail[0].y <= 0)
+	if (snake.tail[0].y >= BORDER_HEIGHT || snake.tail[0].y <= 0)
 	{
 		currentGameScene = gameScenes::gameOver;
 	}
@@ -241,10 +241,6 @@ void Input()
 				snake.dir = DOWN;
 			}
 			break;
-		case 'X':
-		case 'x':
-			currentGameScene = gameScenes::gameOver;
-			break;
 		}
 	}
 }
@@ -284,7 +280,7 @@ void DrawBorders()
 		}
 
 		SetConsoleCursorPos({ i,0 });
-		cout << char(219);
+		cout << char(219); // 219 es un bloque blanco
 		SetConsoleCursorPos({ i,BORDER_HEIGHT });
 		cout << char(219);
 		SetConsoleCursorPos({ 0,i });
@@ -420,20 +416,6 @@ void GameModeSelector(const int& menuItems, int& currentSelection, const string 
 	{
 		if (i == currentSelection)
 		{
-			if (i == 0)
-			{
-				SetConsoleColor(11);
-				SetConsoleColor(15);
-			}
-			else if (i == 1)
-			{
-				SetConsoleColor(12);
-				SetConsoleColor(15);
-			}
-			else
-			{
-				SetConsoleColor(15);
-			}
 			cout << "           " << "> " << options[i] << " <" << endl;  // Resalta la opción seleccionada
 		}
 		else

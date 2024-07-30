@@ -2,6 +2,7 @@
 
 void MenuSelector(const int& menuItems, int& currentSelection, const std::string  options[3], char& input);
 void ImagePrint();
+
 void ShowMenu(Scenes& scene)
 {
 	system("CLS");
